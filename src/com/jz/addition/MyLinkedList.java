@@ -3,7 +3,7 @@ package com.jz.addition;
 import java.util.logging.Logger;
 
 /**
- * 链表的实现
+   *  链表的实现
  * 
  * @author Kesa
  *
@@ -80,7 +80,7 @@ public class MyLinkedList {
 		return count;
 	}
 
-	/**
+	/** 
 	 * 删除指定内容的节点
 	 * 
 	 * @param node 指定节点
