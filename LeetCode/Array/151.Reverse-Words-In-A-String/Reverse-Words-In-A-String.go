@@ -1,7 +1,6 @@
 package array
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -79,8 +78,7 @@ func trim(s string) []byte {
 type strDeQueue []string
 
 func (sdq strDeQueue) AddFront(str string) strDeQueue {
-	rcv := make(strDeQueue, 1)
-	rcv[0] = str
+	rcv := []string{str}
 	return append(rcv, sdq...)
 }
 
@@ -96,18 +94,17 @@ func reverseWords3(s string) string {
 	}
 	// 单词入列
 	var b []byte
-	stk := make(strDeQueue, 0)
+	sdq := make(strDeQueue, 0)
 	for left <= right {
 		c := s[left]
 		if c != ' ' {
 			b = append(b, c)
 		} else if len(b) != 0 {
-			stk = stk.AddFront(string(b))
+			sdq = sdq.AddFront(string(b))
 			b = b[:0]
 		}
 		left++
 	}
-	stk = stk.AddFront(string(b))
-	fmt.Println(stk)
-	return strings.Join(stk, " ")
+	sdq = sdq.AddFront(string(b))
+	return strings.Join(sdq, " ")
 }

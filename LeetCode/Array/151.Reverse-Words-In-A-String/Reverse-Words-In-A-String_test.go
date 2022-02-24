@@ -40,7 +40,7 @@ func TestReverseWords1(t *testing.T) {
 		if q.ans != res {
 			t.Errorf("Wrong anwser: [Input]: %v, [Output]: %v, [Anwser]: %v\n, ", q.params, res, q.ans)
 		}
-		fmt.Printf("[Input]: %v, [Output]: %v, [Anwser]: %v\n", q.params, reverseWords2(q.params), q.ans)
+		fmt.Printf("[Input]: %v, [Output]: %v, [Anwser]: %v\n", q.params, res, q.ans)
 	}
 	fmt.Println("------------------------Solution 3------------------------")
 	for _, q := range qs {
@@ -48,6 +48,6 @@ func TestReverseWords1(t *testing.T) {
 		if q.ans != res {
 			t.Errorf("Wrong anwser: [Input]: %v, [Output]: %v, [Anwser]: %v\n, ", q.params, res, q.ans)
 		}
-		fmt.Printf("[Input]: %v, [Output]: %v, [Anwser]: %v\n", q.params, reverseWords2(q.params), q.ans)
+		fmt.Printf("[Input]: %v, [Output]: %v, [Anwser]: %v\n", q.params, res, q.ans)
 	}
 }
