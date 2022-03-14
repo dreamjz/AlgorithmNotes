@@ -12,6 +12,7 @@ func bruteForce(nums []int, target int) []int {
 	return nil
 }
 
+// hashTable 使用 哈希表
 func hashTable(nums []int, target int) []int {
 	hashTable := map[int]int{}
 	for i, x := range nums {

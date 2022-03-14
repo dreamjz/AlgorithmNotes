@@ -2,6 +2,7 @@ package array
 
 import (
 	"fmt"
+	"log"
 	"testing"
 )
 
@@ -42,6 +43,7 @@ func init() {
 }
 
 func TestBruteForce(t *testing.T) {
+	log.Println("------------------------ Brute Force ------------------------")
 	for _, q := range qs1 {
 		res := bruteForce(q.params.nums, q.params.target)
 		if !intsEqWithoutOrder(res, q.ans) {
@@ -52,6 +54,7 @@ func TestBruteForce(t *testing.T) {
 }
 
 func TestHashTable(t *testing.T) {
+	log.Println("------------------------ Hash Table ------------------------")
 	for _, q := range qs1 {
 		res := hashTable(q.params.nums, q.params.target)
 		if !intsEqWithoutOrder(res, q.ans) {

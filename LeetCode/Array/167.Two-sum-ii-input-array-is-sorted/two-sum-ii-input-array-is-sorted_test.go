@@ -28,7 +28,15 @@ func TestTwoSum1(t *testing.T) {
 
 	fmt.Println("------------------------ Solution 1 ------------------------")
 	for _, q := range qs {
-		res := twoSum1(q.param.param1, q.param.param2)
+		res := twoSumIIBinarySearch(q.param.param1, q.param.param2)
+		if !intsEq(res, q.ans) {
+			t.Errorf("Wrong anwser: [Input]: %v, [Output]: %v, [Anwser]: %v\n, ", q.param, res, q.ans)
+		}
+		fmt.Printf("[Input]: %v, [Output]: %v, [Anwser]: %v\n", q.param, res, q.ans)
+	}
+	fmt.Println("------------------------ Solution 2 ------------------------")
+	for _, q := range qs {
+		res := twoSumIIDoublePointer(q.param.param1, q.param.param2)
 		if !intsEq(res, q.ans) {
 			t.Errorf("Wrong anwser: [Input]: %v, [Output]: %v, [Anwser]: %v\n, ", q.param, res, q.ans)
 		}

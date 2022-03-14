@@ -1,6 +1,7 @@
 package Array
 
-func twoSum1(numbers []int, target int) []int {
+// twoSumIIBinarySearch 使用 二分查找
+func twoSumIIBinarySearch(numbers []int, target int) []int {
 	n := len(numbers)
 	for i := 0; i < n; i++ {
 		left, right := i+1, n-1
@@ -14,6 +15,22 @@ func twoSum1(numbers []int, target int) []int {
 			} else {
 				left = mid + 1
 			}
+		}
+	}
+	return []int{-1, -1}
+}
+
+// twoSumIIDoublePointer 使用双指针
+func twoSumIIDoublePointer(numbers []int, target int) []int {
+	left, right := 0, len(numbers)-1
+	for left < right {
+		sum := numbers[left] + numbers[right]
+		if sum == target {
+			return []int{left + 1, right + 1}
+		} else if sum < target {
+			left++
+		} else {
+			right--
 		}
 	}
 	return []int{-1, -1}
