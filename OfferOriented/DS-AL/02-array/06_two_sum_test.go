@@ -150,7 +150,7 @@ func testSet(size int, max, min int) []int {
 }
 
 // ascending order
-func sort(ints []int) {
+func qSortArr(ints []int) {
 	quickSort(ints, 0, len(ints)-1)
 }
 
@@ -168,7 +168,7 @@ func partition(ints []int, left, right int) (int, int) {
 	p := ints[pIdx]
 	swap(ints, pIdx, right)
 
-	// 3-partiton: Less, Equal, Great
+	// 3-partition: Less, Equal, Great
 	less := left
 	great := right
 	idx := left
@@ -208,7 +208,7 @@ func BenchmarkTwoSum(b *testing.B) {
 
 	for k := 1000; k <= 100000; k *= 10 {
 		set := testSet(k, k, -k)
-		sort(set)
+		qSortArr(set)
 		target := rand.Intn(2*k+1) - k
 		b.ResetTimer()
 		for _, tt := range tests {
