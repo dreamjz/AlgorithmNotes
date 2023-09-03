@@ -10,9 +10,9 @@ func minSubArrayLen(nums []int, k int) int {
 		sum += nums[right]
 		for left <= right && sum >= k {
 			minLen = minLength(minLen, right-left+1)
-			left++
 			// next sub
 			sum -= nums[left]
+			left++
 		}
 	}
 
